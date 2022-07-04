@@ -20,9 +20,9 @@
         android:id="@+id/bus_info_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:paddingEnd="30dp"
         android:spinnerMode="dropdown"
-        android:layout_marginEnd="50dp"
         app:layout_constraintLeft_toRightOf="@id/region_textview"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/region_textview"
@@ -32,24 +32,24 @@
         android:id="@+id/bus_number_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bus_number"
-        app:layout_constraintTop_toBottomOf="@+id/region_textview"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:text="@string/bus_number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/region_textview" />
 
     <EditText
         android:id="@+id/bus_number_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/bus_info_spinner"
-        app:layout_constraintLeft_toRightOf="@id/bus_number_textview"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="30dp"
         android:importantForAutofill="no"
         android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@id/bus_number_textview"
         app:layout_constraintRight_toLeftOf="@id/search_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bus_info_spinner"
         tools:ignore="LabelFor" />
 
 
@@ -57,18 +57,26 @@
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/bus_number_edittext"
+        android:text="@string/search"
         app:layout_constraintLeft_toRightOf="@+id/bus_number_edittext"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="@string/search"/>
+        app:layout_constraintTop_toTopOf="@+id/bus_number_edittext" />
 
     <ListView
         android:id="@+id/search_result_listview"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@id/bus_number_edittext"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bus_number_edittext" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/advanced_search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/advanced_search"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/search_result_listview"
+        app:layout_constraintTop_toBottomOf="@id/search_result_listview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
