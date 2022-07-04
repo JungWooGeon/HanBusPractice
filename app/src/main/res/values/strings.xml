@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HanPractice</string>
+    <string name="bus_info">지역 정보</string>
+    <string name="bus_number">버스 번호</string>
+    <string name="search">검색</string>
+</resources>
