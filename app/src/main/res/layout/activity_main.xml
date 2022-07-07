@@ -6,77 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/region_textview"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bus_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
-        android:text="@string/bus_info"
+        android:text="버스 노선 정보"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/bus_info_spinner"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bus_arrive_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:paddingEnd="30dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintLeft_toRightOf="@id/region_textview"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/region_textview"
-        tools:ignore="RtlSymmetry" />
-
-    <TextView
-        android:id="@+id/bus_number_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/bus_number"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/region_textview" />
-
-    <EditText
-        android:id="@+id/bus_number_edittext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
         android:layout_marginTop="30dp"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        app:layout_constraintLeft_toRightOf="@id/bus_number_textview"
-        app:layout_constraintRight_toLeftOf="@id/search_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bus_info_spinner"
-        tools:ignore="LabelFor" />
-
+        android:text="버스 도착 정보"
+        app:layout_constraintLeft_toLeftOf="@id/bus_info_button"
+        app:layout_constraintTop_toBottomOf="@id/bus_info_button" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/search_button"
+        android:id="@+id/subway_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/search"
-        app:layout_constraintLeft_toRightOf="@+id/bus_number_edittext"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bus_number_edittext" />
-
-    <ListView
-        android:id="@+id/search_result_listview"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bus_number_edittext" />
+        android:layout_marginTop="30dp"
+        android:text="지하철 노선 정보"
+        app:layout_constraintLeft_toLeftOf="@id/bus_info_button"
+        app:layout_constraintTop_toBottomOf="@id/bus_arrive_info_button" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/advanced_search_button"
+        android:id="@+id/subway_arrive_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/advanced_search"
-        android:visibility="gone"
-        app:layout_constraintRight_toRightOf="@id/search_result_listview"
-        app:layout_constraintTop_toBottomOf="@id/search_result_listview" />
+        android:layout_marginTop="30dp"
+        android:text="지하철 도착 정보"
+        app:layout_constraintLeft_toLeftOf="@id/bus_info_button"
+        app:layout_constraintTop_toBottomOf="@id/subway_info_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="최단 거리 찾기"
+        app:layout_constraintTop_toBottomOf="@id/subway_arrive_info_button"
+        app:layout_constraintLeft_toLeftOf="@id/bus_info_button"
+        android:layout_marginTop="30dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

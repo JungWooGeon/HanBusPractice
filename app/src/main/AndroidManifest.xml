@@ -20,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BusRouteInfoActivity"/>
+        <activity android:name=".BusArriveInfoActivity"/>
     </application>
 
 </manifest>
