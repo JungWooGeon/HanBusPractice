@@ -2,7 +2,6 @@ package com.sample.hanpractice;
 
 import com.sample.hanpractice.model.BusData;
 import com.sample.hanpractice.model.BusInfo;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.InputStream;

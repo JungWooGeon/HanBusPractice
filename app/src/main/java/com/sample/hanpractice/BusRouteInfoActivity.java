@@ -122,6 +122,8 @@ public class BusRouteInfoActivity extends AppCompatActivity {
             if (nThread == null) {
                 nThread = new BusInfoThread();
                 nThread.start();
+                // 이 Thread로 버스 ID에 대한 목록을 먼저 조회한 후에 정류장 목록 조회 Thread를 실행해야 하므로
+                // Thread가 끝나기를 기다리는 join() 사용
                 nThread.join();
             }
         } catch (Exception e) {
@@ -163,11 +165,7 @@ public class BusRouteInfoActivity extends AppCompatActivity {
 
         // 해당 버스 노선에 대한 정류장 목록 조회 후 표시하는 Thread
         Thread searchBusNodeThread  = new Thread(this::busNodeSearch);
-        try {
-            searchBusNodeThread.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        searchBusNodeThread.start();
     }
 
     // 버스 노선에 대한 정류장 목록 조회 (API 사용)
@@ -219,10 +217,6 @@ public class BusRouteInfoActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
-        try {
-            t.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        t.start();
     }
 }
