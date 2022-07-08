@@ -25,7 +25,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 public class BusArriveInfoActivity extends AppCompatActivity {
-    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
+    final private String serviceKey = "서비스키";
     final private String cityCode = "25"; // 대전 도시 코드 : 25 (api에서 확인 가능)
 
     private Button search_button;

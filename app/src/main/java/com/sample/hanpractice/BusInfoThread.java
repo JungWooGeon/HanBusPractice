@@ -13,7 +13,7 @@ import java.util.ArrayList;
 // 버스 ID, 버스명, 버스 타입(급행, 간선 등) 을 조회하는 API 실행 Thread
 public class BusInfoThread extends Thread {
 
-    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
+    final private String serviceKey = "서비스키";
     private final ArrayList<BusInfo> bus_info = new ArrayList<BusInfo>();
     private String bus_node;
     private String bus_name;
