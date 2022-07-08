@@ -1,9 +1,9 @@
 package com.sample.hanpractice.model;
 
 public class BusInfo {
-    private String busNode;
-    private String busName;
-    private String busType;
+    private final String busNode;
+    private final String busName;
+    private final String busType;
 
     public BusInfo(String busNode, String busName, String busType) {
         this.busNode = busNode;

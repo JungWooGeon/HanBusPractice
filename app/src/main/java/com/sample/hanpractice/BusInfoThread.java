@@ -11,6 +11,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
+// 버스 ID, 버스명, 버스 타입(급행, 간선 등) 을 조회하는 API 실행 Thread
 public class BusInfoThread extends Thread {
 
     final private String serviceKey = "서비스키";
@@ -25,6 +26,7 @@ public class BusInfoThread extends Thread {
         for (int i = 1; i <= 2; i++) {
             busInfoSearch(Integer.toString(i));
         }
+        // Singleton 패턴 class에 조회한 값들 저장
         BusData.getInstance().setBusInfo(busInfo);
     }
 
