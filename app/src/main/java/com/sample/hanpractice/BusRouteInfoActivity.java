@@ -9,15 +9,11 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.sample.hanpractice.model.BusData;
 import com.sample.hanpractice.model.BusInfo;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -26,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class BusRouteInfoActivity extends AppCompatActivity {
-    final private String serviceKey = "서비스키";
+    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
     private String busNodeList;
     private String busRouteId = "0";
     private ArrayList<BusInfo> busInfo;
@@ -169,7 +165,6 @@ public class BusRouteInfoActivity extends AppCompatActivity {
         Thread searchBusNodeThread  = new Thread(this::busNodeSearch);
         try {
             searchBusNodeThread.start();
-            searchBusNodeThread.join();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -217,16 +212,15 @@ public class BusRouteInfoActivity extends AppCompatActivity {
                     //다음으로 이동
                     eventType = parser.next();
                 }
+                runOnUiThread(() -> {
+                    search_result_textview.setText(busNodeList);
+                });
             } catch(Exception e) {
                 e.printStackTrace();
             }
         });
         try {
             t.start();
-            t.join();
-            runOnUiThread(() -> {
-                search_result_textview.setText(busNodeList);
-            });
         } catch (Exception e) {
             e.printStackTrace();
         }

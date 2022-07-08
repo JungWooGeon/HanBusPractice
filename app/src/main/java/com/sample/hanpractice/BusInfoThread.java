@@ -14,11 +14,11 @@ import java.util.ArrayList;
 // 버스 ID, 버스명, 버스 타입(급행, 간선 등) 을 조회하는 API 실행 Thread
 public class BusInfoThread extends Thread {
 
-    final private String serviceKey = "서비스키";
-    private final ArrayList<BusInfo> busInfo = new ArrayList<BusInfo>();
-    private String busNode;
-    private String busName;
-    private String busType;
+    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
+    private final ArrayList<BusInfo> bus_info = new ArrayList<BusInfo>();
+    private String bus_node;
+    private String bus_name;
+    private String bus_type;
 
     @Override
     public void run() {
@@ -27,7 +27,7 @@ public class BusInfoThread extends Thread {
             busInfoSearch(Integer.toString(i));
         }
         // Singleton 패턴 class에 조회한 값들 저장
-        BusData.getInstance().setBusInfo(busInfo);
+        BusData.getInstance().setBusInfo(bus_info);
     }
 
     private void busInfoSearch(String pageNumber) {
@@ -58,15 +58,15 @@ public class BusInfoThread extends Thread {
                     case XmlPullParser.TEXT:
                         switch (tagName) {
                             case "ROUTE_CD":
-                                busNode = parser.getText();
+                                bus_node = parser.getText();
                                 break;
                             case "ROUTE_NO":
-                                busName = parser.getText();
+                                bus_name = parser.getText();
                                 break;
                             case "ROUTE_TP":
-                                busType = parser.getText();
-                                BusInfo bus = new BusInfo(busNode, busName, busType);
-                                busInfo.add(bus);
+                                bus_type = parser.getText();
+                                BusInfo bus = new BusInfo(bus_node, bus_name, bus_type);
+                                bus_info.add(bus);
                                 break;
                         }
                 }
