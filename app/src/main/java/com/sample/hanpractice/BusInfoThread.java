@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class BusInfoThread extends Thread {
 
-    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
+    final private String serviceKey = "서비스키";
     private final ArrayList<BusInfo> busInfo = new ArrayList<BusInfo>();
     private String busNode;
     private String busName;

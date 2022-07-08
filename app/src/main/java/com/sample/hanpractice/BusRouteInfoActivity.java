@@ -33,7 +33,7 @@ public class BusRouteInfoActivity extends AppCompatActivity {
     EditText bus_number_edittext;
     ListView search_bus_listview;
 
-    final private String serviceKey = "LffsTTaENsQZbeP0kR%2Ba6ImEeBcZjELW3TqLdEOh1q6GjOh9TtLA90RkoPps8rQl5mZJ%2BjeiUydmTbfFFShfSw%3D%3D";
+    final private String serviceKey = "서비스키";
     private ArrayList<BusInfo> busInfo;
     private String busNodeList;
     private String busRouteId = "0";
